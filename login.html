@@ -15,34 +15,36 @@
  
   
   <!-- Content -->
-  <main class="content content--login">
+  <main class="content content--onboarding">
    
-    <div class="login-logo">
+    <div class="onboarding-logo">
       <img src="img/logo-master-pools-guild.png" alt="Master Pools Guild"/>
     </div>
     
-        <!-- Content Block -->
-    <section class="login">
+    <!-- Content Block -->
+    <section class="onboarding-form">
       
       <form class="form form--login">
         
         <p class="form__intro">Enter your credentials to access the app</p>
-                
-        <div class="form-group">
-          <div class="form--prefix">
-            <i class="icon-user form__picto"></i>
-            <input class="form-control" type="text" name=" " value="" placeholder="Username" />
+        
+        
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="icon-user"></i></span>
           </div>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-        <div class="form-group form-group--forgot">
-          <a href="#" class="btn-text btn-forgotpassword">Forgot</a>
-          <div class="form--prefix">
-            <i class="icon-password form__picto"></i>
-            <input class="form-control" type="password" name=" " value="" placeholder="Password" />
+        
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon2"><i class="icon-password"></i></span>
           </div>
+          <input type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon2">
         </div>
+
         <div class="form-group">
-          <button type="submit" class="btn btn-block btn--primary">LOG IN</button>
+          <button type="submit" class="btn btn-block btn-primary">LOG IN</button>
         </div>
       </form>
       
