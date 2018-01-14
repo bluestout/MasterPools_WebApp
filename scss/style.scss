@@ -13,7 +13,7 @@ $color-brand: #1E3E73;
 $color-brand-alt: #70CEDE;
 
 $color-grey: #F2F2F4;
-$color-dkgrey: #333E46;
+$color-dkgrey: #27282C;
 
 $color-dark: #262D39;
 $color-bg: #F4F9FB;
@@ -93,7 +93,10 @@ a, .btn {
     outline: none;
     text-decoration: none;
   }
+}
 
+a {
+  color: $color-brand-alt;
 }
 
 .overlay {
@@ -130,32 +133,8 @@ a, .btn {
   border-top: none !important;
 }
 
-.ordelimit {
-  max-width: 300px;
-  margin: 30px auto;
-  border-bottom: 1px solid rgba($color-dkgrey, .12);
-  text-align: center;
-  height: 6px;
-  font-size: 11px;
-  color: rgba($color-dkgrey, .35);
-
-  span {
-    padding: 0 18px;
-    background-color: #fff;
-  }
-}
-
-.withline {
-  position: relative;
-
-  &:after {
-    content: "";
-    display: table;
-    width: 33px;
-    height: 3px;
-    background-color: rgba(45, 79, 124, 0.25);
-    margin: 9px 0;
-  }
+.whitebg {
+  background-color: #fff;
 }
 
 
@@ -424,10 +403,38 @@ a, .btn {
         margin: .2em 0;
       }
     }
+    
+    &.ql-blank {
+      
+      &::before {
+        font-style: normal;
+        color: rgba($color-dkgrey, .35);
+      }
+    }
   }
 }
 
 
+.editor-container--article {
+  margin-bottom: 25px;
+  display: none;
+  
+  .ql-toolbar {
+    border: 1px solid rgba($color-brand-alt, .15);
+  }
+  
+  .ql-container {
+    border: 1px solid rgba($color-brand-alt, .15);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0 1px 4px rgba($color-dkgrey, .06);
+  }
+  
+  .ql-editor {
+    min-height: 300px;
+  }
+  
+}
 
 
 .delimited {
@@ -616,35 +623,6 @@ a, .btn {
     }
   }
   
-  &.btn--outlineprimary,
-  &.btn--outlineprimary:focus {
-    background-color: transparent;
-    color: $color-action;
-    box-shadow: inset 0 0 0 2px $color-action;;
-
-    &:hover {
-      background-color: $color-action;
-      color: #fff;
-    }
-  }
-
-  &.btn--green,
-  &.btn--green:focus {
-    background-color: $color-green;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    
-    &.btn--shadow {
-      box-shadow: 0 3px 10px rgba($color-green, .2);
-    }
-
-    &:hover {
-      background-color: darken($color-green, 6%);
-      color: #fff;
-    }
-  }
-  
   &.btn--wide {
     min-width: 200px;
   }
@@ -655,6 +633,22 @@ a, .btn {
     color: #fff;
   }
 
+}
+
+.btn-back {
+  color: rgba($color-dkgrey, .8);
+  padding: 11px 0;
+  
+  &:hover {
+    color: $color-dkgrey;
+  }
+  
+  i {
+    transform: rotate(180deg);
+    font-size: .9em;
+    position: relative;
+    top: -1px !important;
+  }
 }
 
 
@@ -734,14 +728,22 @@ a, .btn {
   }
   
   .card__img {
-    margin-bottom: .75em;
+    margin-bottom: 1.1em;
     background-color: rgba($color-dkgrey, .06);
     
     img {
       max-width: 100%;
       height: auto;
     }
-  } 
+  }
+  
+  .card-body {
+    
+    .card__intro {
+      font-size: 1.15em;
+      margin-bottom: .7em;
+    }
+  }
 }
 
 .card--welcome {
@@ -960,6 +962,10 @@ a, .btn {
   padding: 10px 15px;
   color: #fff;
   font-weight: 700;
+  
+  i {
+    margin-right: 5px;
+  }
 }
 
 
@@ -974,6 +980,7 @@ a, .btn {
     bottom: 0;
     width: 240px;
     background-color: $color-brand;
+    z-index: 10;
   }
   
   .content__body {
@@ -1117,11 +1124,16 @@ a, .btn {
     
     &:hover {
       color: #fff;
+      background-color: rgba(0,0,0,.08);
     }
     
     &.active {
       color: #fff;
       box-shadow: inset 3px 0 0 #fff;
+      
+      &:hover {
+        background-color: transparent;
+      }
       
       i {
         opacity: 1;
@@ -1298,71 +1310,127 @@ a, .btn {
   margin: 0 auto;
 }
 
-.feed {
-  
-  .card {
-    border-radius: 4px;
-    border: 1px solid lighten($color-brand-alt, 25%);
-    box-shadow: 0 2px 12px rgba($color-dkgrey, .12);
-    margin-bottom: 20px;
-    
-    .card-header {
-      background-color: transparent;
-      border-bottom: 0;
-      padding-left: 35px;
-      padding-right: 35px;
-      
-      &+.card-body {
-        padding-top: 0;
+.card--feed {
+  border-radius: 4px;
+  border: 1px solid lighten($color-brand-alt, 25%);
+  box-shadow: 0 2px 12px rgba($color-dkgrey, .12);
+  margin-bottom: 20px;
+
+  .card-header {
+    background-color: transparent;
+    border-bottom: 0;
+    padding-left: 35px;
+    padding-right: 35px;
+
+    &+.card-body {
+      padding-top: 0;
+    }
+  }
+
+  .card-body {
+    padding-left: 35px;
+    padding-right: 35px;
+
+    p {
+      line-height: 1.45em;
+      margin: 0;
+
+      &+p {
+        margin-top: .4em;
       }
     }
-    
-    .card-body {
-      padding-left: 35px;
-      padding-right: 35px;
-      
-      p {
-        line-height: 1.45em;
-        margin: 0;
-        
-        &+p {
-          margin-top: .4em;
-        }
-      }
-      
-      .card__link {
-        color: $color-dkgrey;
-        
-        &:hover {
-          color: rgba($color-dkgrey, .8);
-        }
-      }
-    }
-    
-    .card-footer {
-      background-color: rgba($color-bg, .3);
-      border-top-color: rgba($color-dkgrey, .06);
-      padding: 5px 35px;
-      display: flex;
-      align-items: center;
-      
-      .btn {
-        min-width: 100px;
-        text-transform: uppercase;
-      }
-      
-      > * {
-        flex: 1 0 auto;
+
+    .card__link {
+      color: $color-dkgrey;
+
+      &:hover {
+        color: rgba($color-dkgrey, .8);
       }
     }
   }
+
+  .card-footer {
+    background-color: rgba($color-bg, .3);
+    border-top-color: rgba($color-dkgrey, .06);
+    padding: 5px 35px;
+    display: flex;
+    align-items: center;
+
+    .btn {
+      min-width: 100px;
+      text-transform: uppercase;
+    }
+
+    > * {
+      flex: 1 0 auto;
+    }
+  }
   
-  h2 {
+  h1 {
     font-size: 1.4em;
     margin: 0;
     margin-bottom: .6em;
   }
+}
+
+.card--invisible {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
   
+  .card-header {
+    padding: 0;
+    padding-bottom: 15px; 
+  }
+  
+  .card-body {
+    padding: 20px 0;
+  }
+  
+  .card-footer {
+    background-color: transparent;
+    border-top: none;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+    margin-bottom: .5em;
+    margin-top: .2em;
+  }
+  
+  .comments__head {
+    background-color: rgba($color-brand-alt, .1);
+    padding: 8px 16px;
+    
+    .badge {
+      background-color: rgba($color-brand, .45);
+      color: #fff;
+      margin-left: 8px;
+      padding: 3px 6px;
+      padding-bottom: 1px;
+    }
+  }
+  
+  .list-comments {
+    margin-top: 0;
+    border-bottom: none;
+    
+    > li:first-child {
+      border-top: none;
+    }
+    
+    .list-comments__content {
+      
+      p {
+        font-size: 1.05em;
+      }
+      
+      .date {
+        font-size: .875em;
+      }
+    }
+  }
 }
 
 .feed-nav {
@@ -1416,6 +1484,8 @@ a, .btn {
   color: $color-brand-alt;
   border-bottom: none;
   font-size: .8em;
+  padding: 8px 0;
+  display: inline-block;
 }
 
 .list-comments {
@@ -1442,7 +1512,7 @@ a, .btn {
       margin: 0;
       
       &+p {
-        margin-top: .3em;
+        margin-top: .4em;
       }
     }
     
@@ -1451,6 +1521,63 @@ a, .btn {
       opacity: .6;
     }
   }
+  
+  .btn-text {
+    color: $color-brand-alt;
+    border-bottom: none;
+    
+    &:hover {
+      color: $color-brand;
+    }
+  }
+}
+
+.list-comments--withvoting {
+  
+  > li {
+    position: relative;
+  }
+  
+  .list-comments__content {
+    padding-right: 80px;
+    min-height: 110px;
+  }
+  
+  .list-comments__votes {
+    position: absolute;
+    right: 0;
+    top: 14px;
+    width: 60px;
+    
+    > a {
+      display: block;
+      text-align: center;
+      padding: 5px 0;
+      line-height: 1em;
+      
+      &:hover {
+        color: $color-dkgrey;
+      }
+      
+      &:first-child {
+        border-bottom: 1px solid rgba($color-brand-alt, .1);
+      }
+      
+      i {
+        display: block;
+        font-size: 1.5em;
+        margin: 5px 0;
+      }
+    }
+    
+    > .btn-downvote {
+      color: rgba($color-dkgrey, .45);
+    }
+  }
+}
+
+.btn.btn--outline.btn-loadmoreanswers {
+  box-shadow: inset 0 0 0 1px $color-brand-alt;
 }
 
 
@@ -2011,9 +2138,52 @@ a, .btn {
 
 @media only screen and (max-width: 992px) 
 {
+   
+  .content--main {
+    
+    .content__side {
+      width: 90px;
+    }
+    
+    .content__body {
+      left: 90px;
+    }
+  }
   
+  .side-nav {
+    
+    .nav-link {
+      width: 90px;
+      text-align: center;
+      padding: 8px 10px;
+      font-size: 11px;
+      
+      i {
+        font-size: 1.6em;
+        position: static;
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+  }
   
+  .side-logo {
+    padding: 10px 13px;
+  }
+  .side-logo__title {
+    display: none;
+  }
   
+  .btn-usermenu {
+    padding: 9px 25px;
+    
+    &:after {
+      right: 10px;
+    }
+  }
+  .btn-usermenu__title {
+    display: none;
+  }
   
 
 }
