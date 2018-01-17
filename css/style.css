@@ -89,8 +89,23 @@ a {
   width: 44px;
   height: 44px;
   overflow: hidden;
-  border-radius: 50%; }
+  border-radius: 50%;
+  display: inline-block; }
   .avatar img {
+    width: 100%;
+    height: auto; }
+
+.avatar--large {
+  width: 78px;
+  height: 78px; }
+
+.vendorbadge {
+  width: 65px;
+  height: 65px;
+  border: 1px solid rgba(112, 206, 222, 0.12);
+  overflow: hidden;
+  box-shadow: 0 0 8px 1px rgba(30, 62, 115, 0.08); }
+  .vendorbadge img {
     width: 100%;
     height: auto; }
 
@@ -320,33 +335,17 @@ a {
 
 .badge {
   font-weight: 400;
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 4px 8px;
-  padding-bottom: 3px; }
+  padding-bottom: 3px;
+  background-color: rgba(39, 40, 44, 0.35);
+  color: #fff; }
   .badge.badge-success {
     background-color: rgba(133, 178, 0, 0.12);
     color: #85B200; }
   .badge.badge-danger {
     background-color: rgba(241, 76, 76, 0.12);
     color: #F14C4C; }
-  .badge.badge--free {
-    background-color: rgba(133, 178, 0, 0.12);
-    color: #85B200;
-    border-radius: 15px;
-    padding: 4px 12px;
-    min-width: 50px;
-    text-align: center;
-    font-weight: 700;
-    letter-spacing: 2px; }
-  .badge.badge--paid {
-    background-color: rgba(255, 191, 0, 0.25);
-    color: rgba(30, 62, 115, 0.7);
-    border-radius: 15px;
-    padding: 4px 12px;
-    min-width: 50px;
-    text-align: center;
-    font-weight: 700;
-    letter-spacing: 2px; }
 
 .tooltip.top .tooltip-inner {
   padding: 10px 14px;
@@ -683,6 +682,8 @@ a {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
   .side-user .dropdown-menu {
     width: 250px; }
+    .side-user .dropdown-menu .dropdown-item {
+      font-size: .92em; }
 
 .btn-usermenu {
   display: block;
@@ -736,7 +737,7 @@ a {
   overflow-y: auto;
   padding-top: 15px; }
   .side-nav .nav-link {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.7);
     padding: 10px 15px;
     padding-left: 80px;
     line-height: 1.2em;
@@ -756,7 +757,7 @@ a {
       position: absolute;
       left: 26px;
       margin-top: 1px;
-      opacity: .75; }
+      opacity: .55; }
 
 .page-header {
   flex: 0 0 auto;
@@ -872,7 +873,8 @@ a {
   visibility: visible; }
 
 .page-content {
-  padding: 20px; }
+  padding: 20px;
+  padding-top: 25px; }
 
 .page-content__inner {
   max-width: 800px;
@@ -919,10 +921,28 @@ a {
     margin-bottom: .6em; }
 
 .card--profile .card-body {
-  padding: 35px 45px; }
+  padding: 35px 45px;
+  padding-top: 0; }
 .card--profile .card__negative {
   margin-left: -45px;
   margin-right: -45px; }
+
+.card--profilevendor .card__profile {
+  flex-direction: column;
+  background: none;
+  width: auto;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+.card--profilevendor .card__profileavatar {
+  padding-bottom: 0; }
+.card--profilevendor .vendorbadge {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35); }
 
 .card--invisible {
   border-radius: 0;
@@ -1066,7 +1086,7 @@ a {
     max-height: 400px;
     overflow-y: auto; }
   .dropdown-menu--notifications .dropdown-item {
-    padding: 9px 35px;
+    padding: 11px 35px;
     padding-left: 55px;
     border-bottom: 1px solid rgba(112, 206, 222, 0.1); }
     .dropdown-menu--notifications .dropdown-item:before {
@@ -1082,9 +1102,10 @@ a {
       background-color: rgba(255, 191, 0, 0.1);
       text-align: center; }
     .dropdown-menu--notifications .dropdown-item p {
-      margin: 0; }
+      margin: 0;
+      font-size: 1.1em; }
     .dropdown-menu--notifications .dropdown-item .small {
-      margin-top: 1px;
+      margin-top: 2px;
       opacity: .55;
       font-size: .85em; }
   .dropdown-menu--notifications .dropdown-menu__footer {
@@ -1423,10 +1444,39 @@ a {
       opacity: .65; }
   .flextablerow .flexcol--content {
     flex: 1 1 auto; }
+  .flextablerow .flexcol--badges {
+    padding-left: 45px;
+    padding-right: 45px;
+    flex: 1 1 auto; }
   .flextablerow .btn-textsimple {
     font-size: .85em; }
   .flextablerow .flexcol--action {
     padding-right: 45px; }
+
+.flextablerow--noline > * {
+  border-top: none; }
+
+.flextablerow--tight > * {
+  padding-top: 12px;
+  padding-bottom: 12px; }
+
+.flextable__person {
+  padding-top: 18px; }
+  .flextable__person p {
+    margin: 0 !important; }
+  .flextable__person .title {
+    font-size: .85em;
+    opacity: .65; }
+
+.list-badges {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0; }
+  .list-badges > li {
+    padding: 1px; }
+  .list-badges .badge {
+    padding: 8px 18px;
+    font-size: .8em; }
 
 /*---- Footer ----*/
 .page-footer {
