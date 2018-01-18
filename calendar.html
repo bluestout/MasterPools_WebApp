@@ -83,7 +83,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link" href="#">
               <i class="icon-essential"></i>
               Essential Service Providers
             </a>
@@ -101,7 +101,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link active" href="#">
               <i class="icon-calendar"></i>
               Calendar
             </a>
@@ -138,17 +138,7 @@
         
         <div class="page-header__bar">
           <div class="page-header__content">
-            <form class="form form--forum">
-              <div class="form-group">
-                <select class="form-control" name=" ">
-                  <option selected disabled>Forum Name</option>
-                  <option>Forum name #1</option>
-                  <option>Forum name #2</option>
-                  <option>Forum name #3</option>
-                  <option>Forum name #4</option>
-                </select>
-              </div>
-            </form>
+            <p class="page-header__stats">135 members<span>&middot;</span>120 active</p>
           </div>
           <div class="page-header__actions">
             <div>
@@ -185,25 +175,9 @@
               <a href="#" class="btn btn--icon btn-search"><i class="icon-search"></i></a>
             </div>
             <div>
-              <a href="#" class="btn btn-primary btn--withlasticon" data-toggle="modal" data-target="#modal-newquestion">New Provider<i class="icon-plus"></i></a>
+              <a href="#" class="btn btn-primary btn--withlasticon" data-toggle="modal" data-target="#modal-newquestion">New member<i class="icon-plus"></i></a>
             </div>
           </div>
-        </div>
-        
-        <div class="page-header__filters">
-          
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Latest answers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Latest questions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Most popular</a>
-            </li>
-          </ul>
-          
         </div>
         
         <div class="page-header__search">
@@ -227,121 +201,76 @@
         
           <div class="feed">
 
-            <div class="card card--feed">
-              <a href="#">
-                <img class="card-img-top" src="img/img-essential-sample1.jpg" alt="Sample"/>
-              </a>
-              <div class="card-body">
-                <a href="#" class="card__link">
-                  <h1>15% discount on East Coast Deliveries</h1>
-                  <p class="card-text">Nulla bibendum justo gravida, congue orci vel, tempor nisl. Proin at cursus lacus, ut aliquam nulla. Ut sed faucibus felis, non faucibus nibh. Morbi consectetur...</p>
+            <div class="card card--calendar">
+              <div class="card__img" style="background-image: url(img/img-calendar-sample1.jpg)">
+                <a href="#">
+                  <div class="largedate">
+                    <p class="largedate__day">15-20</p>
+                    <p class="largedate__month">Dec 2017</p>
+                  </div>
                 </a>
               </div>
-              <div class="card-footer">
-                <div class="card-footer__author">
-                  <div class="user user--vendor">
-                    <div class="vendorbadge">
-                      <a href="#">
-                        <img src="img/company3.jpg" alt="Company"/>
-                      </a>
-                    </div>
-                    <div class="user__info">
-                      <p>3 days ago by</p>
-                      <p><a href="#"><strong>Herman</strong></a></p>
-                    </div>
+              <div class="card-body">
+                <a href="#" class="btn-addtocal">Add to<br/>Calendar<i class="icon-add-to-cal"></i></a>
+                <a href="#" class="card__link">
+                  <h1>Future of outdoor pools seminar</h1>
+                  <p class="card__location"><i class="icon-location-alt"></i>The Portland Centre, Portland, OR</p>
+                </a>
+              </div>
+            </div>
+            
+            <div class="card card--calendar">
+              <div class="card__img" style="background-image: url(img/img-calendar-sample2.jpg)">
+                <a href="#">
+                  <div class="largedate">
+                    <p class="largedate__day">25</p>
+                    <p class="largedate__month">Dec 2017</p>
                   </div>
-                </div>
-                <div class="card-footer__actions">
-                  <a href="#" class="btn btn-primary">View Deal</a>
-                </div>
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="#" class="btn-addtocal">Add to<br/>Calendar<i class="icon-add-to-cal"></i></a>
+                <a href="#" class="card__link">
+                  <h1>Advanced pool building materials exhibition 2017</h1>
+                  <p class="card__location"><i class="icon-location-alt"></i>Madison Square Garden, New York, NY</p>
+                </a>
+              </div>
+            </div>
+            
+            <div class="card card--calendar">
+              <div class="card__img" style="background-image: url(img/img-calendar-sample3.jpg)">
+                <a href="#">
+                  <div class="largedate">
+                    <p class="largedate__day">15-20</p>
+                    <p class="largedate__month">Dec 2017</p>
+                  </div>
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="#" class="btn-addtocal">Add to<br/>Calendar<i class="icon-add-to-cal"></i></a>
+                <a href="#" class="card__link">
+                  <h1>Future of outdoor pools seminar</h1>
+                  <p class="card__location"><i class="icon-location-alt"></i>The Portland Centre, Portland, OR</p>
+                </a>
               </div>
             </div>
             
             
-            <div class="card card--feed">
-              <div class="card-body">
-                <a href="#" class="card__link">
-                  <h1>Best pool equipment ultimate sales</h1>
-                  <p class="card-text">Nulla bibendum justo gravida, congue orci vel, tempor nisl. Proin at cursus lacus, ut aliquam nulla. Ut sed faucibus felis, non faucibus nibh. Morbi consectetur...</p>
+            <div class="card card--calendar">
+              <div class="card__img" style="background-image: url(img/img-calendar-sample1.jpg)">
+                <a href="#">
+                  <div class="largedate">
+                    <p class="largedate__day">15-20</p>
+                    <p class="largedate__month">Dec 2017</p>
+                  </div>
                 </a>
               </div>
-              <div class="card-footer">
-                <div class="card-footer__author">
-                  <div class="user user--vendor">
-                    <div class="vendorbadge">
-                      <a href="#">
-                        <img src="img/company2.jpg" alt="Company"/>
-                      </a>
-                    </div>
-                    <div class="user__info">
-                      <p>2 days ago by</p>
-                      <p><a href="#"><strong>Mike</strong></a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer__actions">
-                  <a href="#" class="btn btn-primary">View Deal</a>
-                </div>
-              </div>
-            </div>
-            
-            
-            <div class="card card--feed card--withbadge">
-              <a href="#">
-                <p class="badge card__badge">Limited Time Offer</p>
-                <img class="card-img-top" src="img/img-essential-sample2.jpg" alt="Sample"/>
-              </a>
               <div class="card-body">
+                <a href="#" class="btn-addtocal">Add to<br/>Calendar<i class="icon-add-to-cal"></i></a>
                 <a href="#" class="card__link">
-                  <h1>Don’t miss, top quality pool equipment 50% discount, limited time offer</h1>
-                  <p class="card-text">Nulla bibendum justo gravida, congue orci vel, tempor nisl. Proin at cursus lacus, ut aliquam nulla. Ut sed faucibus felis, non faucibus nibh. Morbi consectetur...</p>
+                  <h1>Future of outdoor pools seminar</h1>
+                  <p class="card__location"><i class="icon-location-alt"></i>The Portland Centre, Portland, OR</p>
                 </a>
-              </div>
-              <div class="card-footer">
-                <div class="card-footer__author">
-                  <div class="user user--vendor">
-                    <div class="vendorbadge">
-                      <a href="#">
-                        <img src="img/company3.jpg" alt="Company"/>
-                      </a>
-                    </div>
-                    <div class="user__info">
-                      <p>3 days ago by</p>
-                      <p><a href="#"><strong>Herman</strong></a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer__actions">
-                  <a href="#" class="btn btn-primary">View Deal</a>
-                </div>
-              </div>
-            </div>
-            
-            
-            <div class="card card--feed">
-              <div class="card-body">
-                <a href="#" class="card__link">
-                  <h1>Best pool equipment ultimate sales</h1>
-                  <p class="card-text">Nulla bibendum justo gravida, congue orci vel, tempor nisl. Proin at cursus lacus, ut aliquam nulla. Ut sed faucibus felis, non faucibus nibh. Morbi consectetur...</p>
-                </a>
-              </div>
-              <div class="card-footer">
-                <div class="card-footer__author">
-                  <div class="user user--vendor">
-                    <div class="vendorbadge">
-                      <a href="#">
-                        <img src="img/company2.jpg" alt="Company"/>
-                      </a>
-                    </div>
-                    <div class="user__info">
-                      <p>2 days ago by</p>
-                      <p><a href="#"><strong>Mike</strong></a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer__actions">
-                  <a href="#" class="btn btn-primary">View Deal</a>
-                </div>
               </div>
             </div>
 
@@ -375,42 +304,6 @@
   </main> <!-- End Wrapper -->
     
  
-  <!-- Modal: New Question -->
-  <div class="modal fade modal--editor" id="modal-newquestion" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">New Question</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"><i class="icon-x"></i></span>
-          </button>
-        </div>
-        <div class="modal-body modal-body--nopadding">
-          <div class="editor-container">
-            <div class="editor editor--newquestion" id="editor-newquestion"></div>
-          </div>
-        </div>
-        <div class="modal-footer modal-footer--dual">
-          <div class="modal-footer__content">
-            <form class="form">
-              <div class="form-group">
-                <label>Your Question Will Be Posted To</label>
-                <select class="form-control" name=" ">
-                  <option>Building Pools</option>
-                  <option>Sourcing Material</option>
-                  <option>Tips</option>
-                </select>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer__actions">
-            <button type="button" class="btn btn--blank" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>

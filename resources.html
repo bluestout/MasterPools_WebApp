@@ -8,7 +8,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="node_modules/quill/dist/quill.snow.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -59,7 +58,7 @@
       <nav class="side-nav">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link active" href="#">
               <i class="icon-forum"></i>
               Forum
             </a>
@@ -83,7 +82,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link" href="#">
               <i class="icon-essential"></i>
               Essential Service Providers
             </a>
@@ -138,17 +137,7 @@
         
         <div class="page-header__bar">
           <div class="page-header__content">
-            <form class="form form--forum">
-              <div class="form-group">
-                <select class="form-control" name=" ">
-                  <option selected disabled>Forum Name</option>
-                  <option>Forum name #1</option>
-                  <option>Forum name #2</option>
-                  <option>Forum name #3</option>
-                  <option>Forum name #4</option>
-                </select>
-              </div>
-            </form>
+            <p class="page-header__stats">115 files total</p>
           </div>
           <div class="page-header__actions">
             <div>
@@ -185,22 +174,40 @@
               <a href="#" class="btn btn--icon btn-search"><i class="icon-search"></i></a>
             </div>
             <div>
-              <a href="#" class="btn btn-primary btn--withlasticon" data-toggle="modal" data-target="#modal-newquestion">New Provider<i class="icon-plus"></i></a>
+              <a href="#" class="btn btn-primary btn--withlasticon" data-toggle="modal" data-target="#modal-newquestion">Upload file<i class="icon-"></i></a>
             </div>
           </div>
         </div>
         
-        <div class="page-header__filters">
+        <div class="page-header__filters page-header__filters--withdropdown">
+          
+          <form class="form form--forum">
+            <div class="form-group">
+              <select class="form-control" name=" ">
+                <option selected disabled>Sort by subject</option>
+                <option>Subject #1</option>
+                <option>Subject #2</option>
+                <option>Subject #3</option>
+                <option>Subject #4</option>
+              </select>
+            </div>
+          </form>
           
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Latest answers</a>
+              <a class="nav-link active" href="#">All</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Latest questions</a>
+              <a class="nav-link" href="#">PDF</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Most popular</a>
+              <a class="nav-link" href="#">Video</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Article</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Other</a>
             </li>
           </ul>
           
@@ -227,121 +234,170 @@
         
           <div class="feed">
 
-            <div class="card card--feed">
-              <a href="#">
-                <img class="card-img-top" src="img/img-essential-sample1.jpg" alt="Sample"/>
-              </a>
-              <div class="card-body">
-                <a href="#" class="card__link">
-                  <h1>15% discount on East Coast Deliveries</h1>
-                  <p class="card-text">Nulla bibendum justo gravida, congue orci vel, tempor nisl. Proin at cursus lacus, ut aliquam nulla. Ut sed faucibus felis, non faucibus nibh. Morbi consectetur...</p>
+            <div class="card card--resources">
+              <div class="card-header">
+                <a href="#">
+                  <div class="card__filetype">
+                    <i class="icon-doc"></i>
+                    <span class="badge badge--pdf">PDF</span>
+                  </div>
                 </a>
               </div>
-              <div class="card-footer">
-                <div class="card-footer__author">
-                  <div class="user user--vendor">
-                    <div class="vendorbadge">
-                      <a href="#">
-                        <img src="img/company3.jpg" alt="Company"/>
-                      </a>
-                    </div>
-                    <div class="user__info">
-                      <p>3 days ago by</p>
-                      <p><a href="#"><strong>Herman</strong></a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer__actions">
-                  <a href="#" class="btn btn-primary">View Deal</a>
-                </div>
+              <div class="card-body">
+                <a href="#" class="card__link">
+                  <h1>Masters Guild Brand Guidelines</h1>
+                  <p class="card-text">Author Name <span>on</span> 05/15/2016</p>
+                </a>
               </div>
             </div>
             
-            
-            <div class="card card--feed">
-              <div class="card-body">
-                <a href="#" class="card__link">
-                  <h1>Best pool equipment ultimate sales</h1>
-                  <p class="card-text">Nulla bibendum justo gravida, congue orci vel, tempor nisl. Proin at cursus lacus, ut aliquam nulla. Ut sed faucibus felis, non faucibus nibh. Morbi consectetur...</p>
+            <div class="card card--resources">
+              <div class="card-header">
+                <a href="#">
+                  <div class="card__filetype">
+                    <i class="icon-video"></i>
+                  </div>
                 </a>
               </div>
-              <div class="card-footer">
-                <div class="card-footer__author">
-                  <div class="user user--vendor">
-                    <div class="vendorbadge">
-                      <a href="#">
-                        <img src="img/company2.jpg" alt="Company"/>
-                      </a>
-                    </div>
-                    <div class="user__info">
-                      <p>2 days ago by</p>
-                      <p><a href="#"><strong>Mike</strong></a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer__actions">
-                  <a href="#" class="btn btn-primary">View Deal</a>
-                </div>
+              <div class="card-body">
+                <a href="#" class="card__link">
+                  <h1>How to build a pool from scratch informational video</h1>
+                  <p class="card-text">Author Name <span>on</span> 05/11/2016 &middot; <strong>3 min</strong></p>
+                </a>
               </div>
             </div>
             
-            
-            <div class="card card--feed card--withbadge">
-              <a href="#">
-                <p class="badge card__badge">Limited Time Offer</p>
-                <img class="card-img-top" src="img/img-essential-sample2.jpg" alt="Sample"/>
-              </a>
-              <div class="card-body">
-                <a href="#" class="card__link">
-                  <h1>Don’t miss, top quality pool equipment 50% discount, limited time offer</h1>
-                  <p class="card-text">Nulla bibendum justo gravida, congue orci vel, tempor nisl. Proin at cursus lacus, ut aliquam nulla. Ut sed faucibus felis, non faucibus nibh. Morbi consectetur...</p>
+            <div class="card card--resources">
+              <div class="card-header">
+                <a href="#">
+                  <div class="card__filetype">
+                    <i class="icon-doc"></i>
+                    <span class="badge badge--doc">DOC</span>
+                  </div>
                 </a>
               </div>
-              <div class="card-footer">
-                <div class="card-footer__author">
-                  <div class="user user--vendor">
-                    <div class="vendorbadge">
-                      <a href="#">
-                        <img src="img/company3.jpg" alt="Company"/>
-                      </a>
-                    </div>
-                    <div class="user__info">
-                      <p>3 days ago by</p>
-                      <p><a href="#"><strong>Herman</strong></a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer__actions">
-                  <a href="#" class="btn btn-primary">View Deal</a>
-                </div>
+              <div class="card-body">
+                <a href="#" class="card__link">
+                  <h1>Masters Guild Brand Guidelines</h1>
+                  <p class="card-text">Author Name <span>on</span> 05/15/2016</p>
+                </a>
               </div>
             </div>
             
-            
-            <div class="card card--feed">
-              <div class="card-body">
-                <a href="#" class="card__link">
-                  <h1>Best pool equipment ultimate sales</h1>
-                  <p class="card-text">Nulla bibendum justo gravida, congue orci vel, tempor nisl. Proin at cursus lacus, ut aliquam nulla. Ut sed faucibus felis, non faucibus nibh. Morbi consectetur...</p>
+            <div class="card card--resources">
+              <div class="card-header">
+                <a href="#">
+                  <div class="card__filetype">
+                    <i class="icon-doc"></i>
+                    <span class="badge badge--pdf">PDF</span>
+                  </div>
                 </a>
               </div>
-              <div class="card-footer">
-                <div class="card-footer__author">
-                  <div class="user user--vendor">
-                    <div class="vendorbadge">
-                      <a href="#">
-                        <img src="img/company2.jpg" alt="Company"/>
-                      </a>
-                    </div>
-                    <div class="user__info">
-                      <p>2 days ago by</p>
-                      <p><a href="#"><strong>Mike</strong></a></p>
-                    </div>
+              <div class="card-body">
+                <a href="#" class="card__link">
+                  <h1>Masters Guild Brand Guidelines</h1>
+                  <p class="card-text">Author Name <span>on</span> 05/15/2016</p>
+                </a>
+              </div>
+            </div>
+            
+            <div class="card card--resources">
+              <div class="card-header">
+                <a href="#">
+                  <div class="card__filetype">
+                    <i class="icon-video"></i>
                   </div>
-                </div>
-                <div class="card-footer__actions">
-                  <a href="#" class="btn btn-primary">View Deal</a>
-                </div>
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="#" class="card__link">
+                  <h1>How to build a pool from scratch informational video</h1>
+                  <p class="card-text">Author Name <span>on</span> 05/11/2016 &middot; <strong>3 min</strong></p>
+                </a>
+              </div>
+            </div>
+            
+            <div class="card card--resources">
+              <div class="card-header">
+                <a href="#">
+                  <div class="card__filetype">
+                    <i class="icon-doc"></i>
+                    <span class="badge badge--doc">DOC</span>
+                  </div>
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="#" class="card__link">
+                  <h1>Masters Guild Brand Guidelines</h1>
+                  <p class="card-text">Author Name <span>on</span> 05/15/2016</p>
+                </a>
+              </div>
+            </div>
+            
+            <div class="card card--resources">
+              <div class="card-header">
+                <a href="#">
+                  <div class="card__filetype">
+                    <i class="icon-doc"></i>
+                    <span class="badge badge--pdf">PDF</span>
+                  </div>
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="#" class="card__link">
+                  <h1>Masters Guild Brand Guidelines</h1>
+                  <p class="card-text">Author Name <span>on</span> 05/15/2016</p>
+                </a>
+              </div>
+            </div>
+            
+            <div class="card card--resources">
+              <div class="card-header">
+                <a href="#">
+                  <div class="card__filetype">
+                    <i class="icon-video"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="#" class="card__link">
+                  <h1>How to build a pool from scratch informational video</h1>
+                  <p class="card-text">Author Name <span>on</span> 05/11/2016 &middot; <strong>3 min</strong></p>
+                </a>
+              </div>
+            </div>
+            
+            <div class="card card--resources">
+              <div class="card-header">
+                <a href="#">
+                  <div class="card__filetype">
+                    <i class="icon-doc"></i>
+                    <span class="badge badge--doc">DOC</span>
+                  </div>
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="#" class="card__link">
+                  <h1>Masters Guild Brand Guidelines</h1>
+                  <p class="card-text">Author Name <span>on</span> 05/15/2016</p>
+                </a>
+              </div>
+            </div>
+            
+            <div class="card card--resources">
+              <div class="card-header">
+                <a href="#">
+                  <div class="card__filetype">
+                    <i class="icon-doc"></i>
+                    <span class="badge badge--pdf">PDF</span>
+                  </div>
+                </a>
+              </div>
+              <div class="card-body">
+                <a href="#" class="card__link">
+                  <h1>Masters Guild Brand Guidelines</h1>
+                  <p class="card-text">Author Name <span>on</span> 05/15/2016</p>
+                </a>
               </div>
             </div>
 
@@ -373,44 +429,7 @@
     </section> <!-- End Content Block -->
     
   </main> <!-- End Wrapper -->
-    
- 
-  <!-- Modal: New Question -->
-  <div class="modal fade modal--editor" id="modal-newquestion" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">New Question</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"><i class="icon-x"></i></span>
-          </button>
-        </div>
-        <div class="modal-body modal-body--nopadding">
-          <div class="editor-container">
-            <div class="editor editor--newquestion" id="editor-newquestion"></div>
-          </div>
-        </div>
-        <div class="modal-footer modal-footer--dual">
-          <div class="modal-footer__content">
-            <form class="form">
-              <div class="form-group">
-                <label>Your Question Will Be Posted To</label>
-                <select class="form-control" name=" ">
-                  <option>Building Pools</option>
-                  <option>Sourcing Material</option>
-                  <option>Tips</option>
-                </select>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer__actions">
-            <button type="button" class="btn btn--blank" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
   
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -421,7 +440,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/js/dist/util.js"></script>
   <script src="node_modules/bootstrap/js/dist/dropdown.js"></script>
-  <script src="node_modules/quill/dist/quill.min.js"></script>
   <script src="js/custom.js"></script>
   
   </body>
