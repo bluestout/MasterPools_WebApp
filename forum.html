@@ -9,6 +9,7 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="node_modules/quill/dist/quill.snow.css">
+<link rel="stylesheet" href="node_modules/jquery-typeahead/dist/jquery.typeahead.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -207,13 +208,22 @@
         </div>
         
         <div class="page-header__search">
-          <a href="#" class="btn btn-close-search"><i class="icon-x"></i></a>
+          <a href="#" class="btn btn-close-search"><i class="icon-x"></i></a>         
           <form class="form">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="icon-search"></i></span>
+            
+            <div class="typeahead__container">
+              <div class="typeahead__field">
+                <span class="typeahead__query">
+                  <div class="form-group">
+                    <input class="form-control from--search form-control--taautocomplete" name="country_v1[query]" type="search" value="" placeholder="Search anything..." autocomplete="off" />
+                  </div>                  
+                </span>
+                <span class="typeahead__button">
+                  <button type="submit">
+                    <i class="typeahead__search-icon"></i>
+                  </button>
+                </span>
               </div>
-              <input class="form-control from--search form-control--autocomplete" type="text" name=" " value="" placeholder="Search anything..." />
             </div>
           </form>
         </div>
@@ -470,7 +480,7 @@
   
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-  <script src="js/prefixfree.min.js"></script>
+  <script src="node_modules/prefixfree/prefixfree.min.js"></script>
   <script src="node_modules/bootstrap/js/dist/index.js"></script>
   <script src="node_modules/bootstrap/js/dist/collapse.js"></script>
   <script src="node_modules/bootstrap/js/dist/modal.js"></script>
@@ -478,6 +488,7 @@
   <script src="node_modules/bootstrap/js/dist/util.js"></script>
   <script src="node_modules/bootstrap/js/dist/dropdown.js"></script>
   <script src="node_modules/quill/dist/quill.min.js"></script>
+  <script src="node_modules/jquery-typeahead/dist/jquery.typeahead.min.js"></script>
   <script src="js/custom.js"></script>
   
   </body>
