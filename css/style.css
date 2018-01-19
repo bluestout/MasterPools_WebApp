@@ -953,7 +953,10 @@ a {
     text-align: center;
     padding: 8px 0;
     line-height: 1em;
-    color: rgba(39, 40, 44, 0.6); }
+    color: rgba(39, 40, 44, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center; }
   .page-header__bar .form {
     padding-top: 2px; }
     .page-header__bar .form .form-group {
@@ -1694,6 +1697,9 @@ a {
 
 .list__img {
   width: 87px; }
+  .list__img .avatar {
+    margin: 0 auto;
+    display: block; }
 
 .list__date {
   font-size: .9em;
@@ -1705,6 +1711,16 @@ a {
   height: 70px;
   background-position: center;
   background-size: cover; }
+
+.sectbadge {
+  width: 65px;
+  height: 65px;
+  background-color: rgba(112, 206, 222, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
+  color: #70CEDE; }
 
 .list--articles .list__title {
   font-size: 1.2em; }
@@ -2218,7 +2234,14 @@ a {
     font-size: 1.1em;
     line-height: 1em;
     flex: 1 1 auto; }
-  .card-heading i {
+    .card-heading h4 span {
+      font-size: .8em; }
+  .card-heading .card-heading__info {
+    text-align: right;
+    padding-left: 12px;
+    font-size: .82em;
+    color: rgba(39, 40, 44, 0.65); }
+  .card-heading .card-heading__icon {
     color: rgba(30, 62, 115, 0.4); }
 
 .card--editprofile .card__badge {

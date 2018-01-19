@@ -1460,6 +1460,9 @@ a {
     padding: 8px 0;
     line-height: 1em;
     color: rgba($color-dkgrey, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .form {
@@ -2619,6 +2622,11 @@ a {
 
 .list__img {
   width: 87px;
+  
+  .avatar {
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .list__date {
@@ -2632,6 +2640,17 @@ a {
   height: 70px;
   background-position: center;
   background-size: cover;
+}
+
+.sectbadge {
+  width: 65px;
+  height: 65px;
+  background-color: rgba($color-brand-alt, .1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
+  color: $color-brand-alt;
 }
 
 
@@ -3496,9 +3515,20 @@ a {
     font-size: 1.1em;
     line-height: 1em;
     flex: 1 1 auto;
+    
+    span {
+      font-size: .8em;
+    }
   }
   
-  i {
+  .card-heading__info {
+    text-align: right;
+    padding-left: 12px;
+    font-size: .82em;
+    color: rgba($color-dkgrey, .65);
+  }
+  
+  .card-heading__icon {
     color: rgba($color-brand, .4);
   }
 }
