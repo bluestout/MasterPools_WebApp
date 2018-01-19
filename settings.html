@@ -165,7 +165,7 @@
           <div class="card card--feed card--settings">
             <div class="card__user">
               
-              <a href="#" class="btn-changepassword btn--withlasticon" data-toggle="modal" data-target="#modal-editpassword">Change password<i class="icon-password"></i></a></p>
+              <a href="#" class="btn-changepassword btn--withlasticon" data-toggle="modal" data-target="#modal-changepassword">Change password<i class="icon-password"></i></a></p>
               
               <div class="user">
                 <a href="#" class="btn-editavatar"><i class="icon-edit"></i></a>
@@ -179,7 +179,7 @@
             </div>
             <div class="card-body">
               
-              <form class="form form--light form--negative">
+              <form class="form form--light form--negative form--delimited">
                 
                 <div class="form-group form-group--dual">
                   <div class="form-group__label">
@@ -217,6 +217,15 @@
                   </div>
                 </div>
                 
+                <div class="form-group form-group--dual">
+                  <div class="form-group__label">
+                    
+                  </div>
+                  <div class="form-group__input">
+                    <a href="#" class="btn-textsimple btn-adddescription btn--withicon"><i class="icon-pluscircle"></i>Add description</a>
+                  </div>
+                </div>
+                
               </form>
               
               <div class="distancer"></div>
@@ -236,6 +245,94 @@
   </main> <!-- End Wrapper -->
     
  
+  <!-- Modal -->
+  <div class="modal fade" id="modal-changepassword" tabindex="-1" role="dialog" aria-labelledby="change password" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <div class="modal__inner modal__inner--narrow">
+            <form class="form form--light form--password">
+              <p class="form__intro">Your password should contain an uppercase, lowercase letters, a number and puntuation symbol</p>
+
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text is-invalid" id="basic-addon1"><i class="icon-password"></i></span>
+                </div>
+                <input class="form-control is-invalid" type="password" name=" " value="" placeholder="Old password" />
+                <div class="invalid-feedback">
+                  Incorrect password
+                </div>
+              </div>
+
+              <div class="distancer distancer--short"></div>
+
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="icon-password"></i></span>
+                </div>
+                <input class="form-control" type="password" name=" " value="" placeholder="New password" />
+              </div>
+
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="icon-password"></i></span>
+                </div>
+                <input class="form-control" type="password" name=" " value="" placeholder="Repeat new password" />
+              </div>
+              
+              
+              <div class="distancer"></div>
+
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn--fat btn-block" data-dismiss="modal" data-toggle="modal" data-target="#modal-changepasswordconfirm">Change Password</button>
+              </div>
+              
+              <div class="distancer distancer--short"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modal-changepasswordconfirm" tabindex="-1" role="dialog" aria-labelledby="change password confrimation" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <div class="modal__inner modal__inner--narrow">
+            <div class="modal-msg">
+              <div class="modal-msg__picto">
+                <img src="img/icon-changed-password.png" alt="Success"/>
+              </div>
+              <h5>Password changed</h5>
+              <p>Your password has been changed. Next time you log in please use the new password you just set.</p>
+              
+              <div class="distancer"></div>
+              <a href="#" class="btn btn-primary btn--fat btn-block" data-dismiss="modal">Close</a>
+              <div class="distancer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>

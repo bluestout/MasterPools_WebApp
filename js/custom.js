@@ -31,7 +31,7 @@ $(document).ready(function($) {
           ['link', 'image']
         ]
       },
-      placeholder: 'Start typing your question...',
+      placeholder: 'Describe your question in more details...',
       theme: 'snow'
     });
   }
@@ -111,6 +111,24 @@ $(document).ready(function($) {
       }
     });
   }
+  
+  
+  //-- Resources list / tiles view
+  $('.btn-list').on('click', function(e){
+    e.preventDefault();
+    
+    $('.feed--resources').removeClass('tileview');
+    $('.btn-tiles').removeClass('active');
+    $(this).addClass('active');
+  });
+  
+  $('.btn-tiles').on('click', function(e){
+    e.preventDefault();
+    
+    $('.feed--resources').addClass('tileview');
+    $('.btn-list').removeClass('active');
+    $(this).addClass('active');
+  });
   
 
   
